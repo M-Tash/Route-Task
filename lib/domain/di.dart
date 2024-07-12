@@ -18,3 +18,4 @@ ProductsRepository injectProductsRepository() {
 ProductsRemoteDataSource injectProductsRemoteDataSource() {
   return ProductsRemoteDataSourceImpl(apiManager: ApiManager.getInstance());
 }
+

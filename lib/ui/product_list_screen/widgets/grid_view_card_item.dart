@@ -47,7 +47,7 @@ class _GridViewCardItemState extends State<GridViewCardItem> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15.r),
                 child: CustomImageWidget(
-                  url: widget.productsEntity.images?[0] ?? '',
+                  url: widget.productsEntity.thumbnail ?? '',
                   animation: MyAssets.loadingAnimation,
                   fit: BoxFit.cover,
                   height: 140.h,

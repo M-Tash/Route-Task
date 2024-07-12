@@ -18,7 +18,8 @@ class RowSectionWidget extends StatelessWidget {
                   color: AppColors.darkPrimaryColor,
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w500,
-                )),
+              ),
+        ),
       ],
     );
   }

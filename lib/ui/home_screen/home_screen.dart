@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:route_task/ui/home_screen/widgets/category_item.dart';
 import 'package:route_task/ui/home_screen/widgets/row_section_widgets.dart';
 
-import '../../domain/di.dart';
-import '../product_list_screen/cubit/product_list_tab_view_model.dart';
 import '../product_list_screen/product_list_view.dart';
 import '../utils/my_assets.dart';
 import 'widgets/annountcements_section.dart';
@@ -25,10 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
     MyAssets.groceriesCategory
   ];
   List<String> categoryNames = ['Beauty', 'Furniture', 'Groceries'];
-
-  ProductListTabViewModel viewModel = ProductListTabViewModel(
-    getAllProductsUseCase: injectGetAllProductsUseCase(),
-  );
 
   @override
   Widget build(BuildContext context) {

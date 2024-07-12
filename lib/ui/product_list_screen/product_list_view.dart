@@ -6,10 +6,10 @@ import 'package:route_task/ui/product_list_screen/widgets/custom_search_with_sho
 import 'package:route_task/ui/product_list_screen/widgets/grid_view_card_item.dart';
 
 import '../../domain/di.dart';
+import '../product_details_screen/product_details_view.dart';
 import '../utils/my_assets.dart';
 import 'cubit/product_list_tab_view_model.dart';
 import 'cubit/states.dart';
-
 class ProductListScreen extends StatefulWidget {
   static String routeName = "product-list-screen";
   final String category;
@@ -19,7 +19,6 @@ class ProductListScreen extends StatefulWidget {
   @override
   _ProductListScreenState createState() => _ProductListScreenState();
 }
-
 class _ProductListScreenState extends State<ProductListScreen> {
   ProductListTabViewModel viewModel = ProductListTabViewModel(
     getAllProductsUseCase: injectGetAllProductsUseCase(),
@@ -112,7 +111,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).pushNamed(
+                                    ProductDetailsView.routeName,
+                                    arguments: {
+                                      'product': state.productsResponseEntity
+                                          .products![index],
+                                      'productList':
+                                          state.productsResponseEntity.products,
+                                      'onAddToCart': () {}
+                                    });
+                              },
                               child: GridViewCardItem(
                                 productsEntity: state
                                     .productsResponseEntity.products![index],
@@ -137,7 +146,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).pushNamed(
+                                    ProductDetailsView.routeName,
+                                    arguments: {
+                                      'product': state.productsResponseEntity
+                                          .products?[index],
+                                      'productList':
+                                          state.productsResponseEntity.products,
+                                      'onAddToCart': () {}
+                                    });
+                              },
                               child: GridViewCardItem(
                                 productsEntity: state
                                     .productsResponseEntity.products![index],

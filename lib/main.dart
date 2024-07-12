@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:route_task/ui/home_screen/home_screen.dart';
+import 'package:route_task/ui/product_details_screen/product_details_view.dart';
+import 'package:route_task/ui/product_list_screen/product_list_view.dart';
 import 'package:route_task/ui/utils/app_theme.dart';
 
 void main() {
@@ -18,6 +21,12 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
+          initialRoute: HomeScreen.routeName,
+          routes: {
+            HomeScreen.routeName: (context) => const HomeScreen(),
+            ProductListScreen.routeName: (context) => const ProductListScreen(),
+            ProductDetailsView.routeName: (context) => ProductDetailsView(),
+          },
           theme: AppTheme.mainTheme,
         );
       },
