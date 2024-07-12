@@ -20,7 +20,7 @@ class CategoryOrBrandItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AspectRatio(
-              aspectRatio: 1,
+              aspectRatio: 0.95,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
